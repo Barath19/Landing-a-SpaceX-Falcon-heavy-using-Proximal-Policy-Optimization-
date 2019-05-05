@@ -5,3 +5,9 @@ Let us try to land a SpaceX Falcon Heavy Rocket in simulation using Reinforcemen
 
 # Dependencies
 pip install gym box2d-py stable_baselines
+
+# Usage
+
+python ppo_RL_train.py (To train the agent)
+
+python ppo_RL_pretrained.py (To run a pretrained agent)
