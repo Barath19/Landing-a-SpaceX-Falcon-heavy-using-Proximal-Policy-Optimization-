@@ -1,4 +1,4 @@
-
+#based on stable baselines implementation https://stable-baselines.readthedocs.io/en/master/modules/ppo2.html
 
 import gym
 import tensorflow as tf
@@ -25,6 +25,7 @@ timestep = 20000000
 ENV  = 'RocketLander-v0'
 timestamp = datetime.datetime.now()
 filename = "ppo2_{}_{}_{}".format(ENV,timestep,str(timestamp)[:19])
+
 # Create log dir
 path = '{}_tensorboard'.format(ENV[:-3])
 #os.makedirs(path, exist_ok=True)
@@ -37,6 +38,7 @@ env = Monitor(env, 'Monitor_Log', allow_early_resets=True)
 env = SubprocVecEnv([lambda: gym.make('RocketLander-v0') for i in range(n_cpu)])
 
 config = tf.ConfigProto()
+#if GPU uncomment below couple of lines of code
 #config = tf.ConfigProto(device_count = {'GPU': 0})
 #config.gpu_options.allow_growth = True
 
