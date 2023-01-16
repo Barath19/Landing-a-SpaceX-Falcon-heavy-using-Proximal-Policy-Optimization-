@@ -1,10 +1,9 @@
 #based on stable baselines implementation https://stable-baselines.readthedocs.io/en/master/modules/ppo2.html
 
 import gym
-from stable_baselines.common.policies import MlpPolicy
-from stable_baselines import PPO2
-from stable_baselines.common.policies import MlpPolicy
-from stable_baselines.common.vec_env import DummyVecEnv
+from stable_baselines3.common.policies import MlpPolicy
+from stable_baselines3 import DDPG
+from stable_baselines3.common.vec_env import DummyVecEnv
 from gym.envs.registration import registry, register, make, spec
 
 #registering custom environment
@@ -24,7 +23,7 @@ env = DummyVecEnv([lambda: env])
 
 # Load the trained agent
 #ppo2_RocketLander-v0_20000000_2019-05-05 03/26/38.pkl
-model = PPO2.load("./model/ppo2_RocketLander_15000000.pkl")
+model = DDPG.load("./model/ppo2_RocketLander_15000000.pkl")
 
 
 #Trained agent in action
