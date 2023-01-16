@@ -6,7 +6,7 @@ Let us try to land a SpaceX Falcon Heavy Rocket in simulation using Reinforcemen
 ![alt-text](ezgif.com-video-to-gif.gif)
 
 # Dependencies
-pip install gym box2d-py stable_baselines
+pip install gym box2d-py stable_baselines3
 
 # Usage
 
